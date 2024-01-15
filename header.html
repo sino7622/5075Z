@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <h1 class="m-0">園路部產業分析平台</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                <a href="main.html" class="nav-item nav-link">首頁</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">產業分析</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="report.html" class="dropdown-item">政策報告</a>
+                        <a href="analysis.html" class="dropdown-item">現況分析</a>
+                        <a href="chain.html" class="dropdown-item">產業鏈</a>
+                        <a href="hotspot.html" class="dropdown-item">產業群聚</a>
+
+                        <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
+                    </div>
+                </div>
+                <a href="about.html" class="nav-item nav-link">關於</a>
+
+            </div>
+            <a href="index.html" class="btn btn-outline-primary rounded-pill py-2 px-4 ms-3">登出</a>
+            <!-- <a href="index.html" class="btn  btn-outline-info rounded-pill py-2 px-4 ms-3 d-lg-block">登出</a> -->
+        </div>
+    </nav>
+    <script>
+        $(document).ready(function () {
+            var currentPage = window.location.href;
+            var navLinks = $('.navbar-nav a');
+            for (var i = 0; i < navLinks.length; i++) {
+                if (navLinks[i].href === currentPage) {
+                    navLinks[i].classList.add('active');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

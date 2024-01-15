@@ -1,11 +1,17 @@
 /********** Template CSS **********/
+/* :root {
+    --primary: #0a58ca;
+    --secondary: #FBA504;
+    --light: #F6F4F9;
+    --dark: #04000B;
+} */
+
 :root {
-    --primary: #6222CC;
+    --primary: #0a58ca;
     --secondary: #FBA504;
     --light: #F6F4F9;
     --dark: #04000B;
 }
-
 
 /*** Spinner ***/
 #spinner {
@@ -588,4 +594,8 @@ h6,
 .footer .copyright a:hover,
 .footer .footer-menu a:hover {
     color: var(--secondary);
+}
+
+.hidden {
+    display: none;
 }
