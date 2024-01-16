@@ -95,8 +95,12 @@
 
             $(".headerpage").load("header.html");
             $(".footerpage").load("footer.html");
+            $(".pages_headerpage").load("pages_header.html");
+            $(".pages_footerpage").load("pages_footer.html");
 
         });
+
+        
     
 })(jQuery);
 

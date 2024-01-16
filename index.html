@@ -28,7 +28,9 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
+	<!-- 引入 Google Sign-In API -->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 </head>
 <!-- Google tag (gtag.js) -->
@@ -81,9 +83,12 @@
 
 					<div class="container-login100-form-btn">
 						<button type="button" onclick="validateLogin()" class="login100-form-btn">Login</button>
-
-
 					</div>
+					<!-- <div class="container-login100-form-btn pt-3">
+						<button type="button" class="login100-form-btn" onclick="onSignIn()">Login with
+							Google</button>
+
+					</div> -->
 					<div id="message" class="text-center p-t-50"></div>
 
 					<!-- <div class="text-center p-t-90">
@@ -98,6 +103,8 @@
 
 
 	<div id="dropDownSelect1"></div>
+
+
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -117,6 +124,10 @@
 	<script src="js/login.js"></script>
 
 	<script src="js/validate.js"></script>
+
+
+
+
 
 </body>
 

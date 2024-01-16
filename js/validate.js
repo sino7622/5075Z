@@ -54,4 +54,25 @@ window.onload = function() {
     document.getElementById("username").value = savedUsername;
     document.getElementById("password").value = savedPassword;
   }
+
 };
+
+// function onSignIn() {
+//   // Google OAuth 2.0 相關信息
+//   const clientId = '468962731963-oeidlndjqhrkehacb2d0tpo7msqukjte.apps.googleusercontent.com';
+//   const redirectUri = 'http://127.0.0.1:5500/main.html';
+//   // https://sino7622.github.io/5075Z/main.html
+  
+//   // 登入函數
+//   window.location.href = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=email%20profile`;
+// };
+
+function logout() {
+  // 應用程式登出邏輯
+  localStorage.removeItem("loggedInUserName");
+  // 其他相關清理代碼
+
+  // 重定向到登出頁面或首頁
+  window.location.href = 'index.html'; // 或其他目標頁面
+  window.location.href = '../index.html'; // 或其他目標頁面
+}
