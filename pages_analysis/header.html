@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="js/validate.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="../js/validate.js"></script>
     <script>
         // Retrieve the logged-in user's name from localStorage
         var loggedInUserName = localStorage.getItem("loggedInUserName");
@@ -12,6 +13,7 @@
             document.getElementById("hello").innerText = "HI! " + loggedInUserName;
         }
     </script>
+
 </head>
 
 
@@ -27,26 +29,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="main.html" class="nav-item nav-link">首頁</a>
+                <a href="../main.html" class="nav-item nav-link">首頁</a>
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">產業分析</a>
                     <div class="dropdown-menu m-0">
-                        <a href="report.html" class="dropdown-item">政策指導</a>
-                        <a href="analysis.html" class="dropdown-item">現況分析</a>
-                        <a href="chain.html" class="dropdown-item">優勢產業-產業鏈</a>
-                        <a href="hotspot.html" class="dropdown-item">優勢產業-產業群聚</a>
-                        <a href="ranking.html" class="dropdown-item">發展建議-綜合排名</a>
+                        <a href="../report.html" class="dropdown-item">政策指導</a>
+                        <a href="../analysis.html" class="dropdown-item">現況分析</a>
+                        <a href="../chain.html" class="dropdown-item">優勢產業-產業鏈</a>
+                        <a href="../hotspot.html" class="dropdown-item">優勢產業-產業群聚</a>
+                        <a href="../ranking.html" class="dropdown-item">發展建議-綜合排名</a>
                     </div>
                 </div>
-                <a href="about.html" class="nav-item nav-link">關於</a>
-                <a href="datalist.html" class="nav-item nav-link">資料清單</a>
+                <a href="../about.html" class="nav-item nav-link">關於</a>
+                <a href="../datalist.html" class="nav-item nav-link">資料清單</a>
 
             </div>
             <span class="badge bg-light text-dark rounded-pill fs-6" id="hello">HI!
                 <!-- Username will be displayed here -->
             </span>
-            <!-- <a href="" class="btn btn-outline-primary rounded-pill py-2 px-4 ms-3" onclick="登出()">登出</a> -->
             <button class="btn btn-outline-primary rounded-pill py-2 px-4 ms-3" onclick="logout()">登出</button>
 
         </div>
@@ -63,6 +64,7 @@
             }
         });
     </script>
+
 
 </body>
 
