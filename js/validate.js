@@ -27,11 +27,12 @@ function validateLogin() {
       var userFound = data.values.find(user => user[0] === username && user[1] === password);
 
       if (userFound) {
-        // 更新訊息元素的內容
-        //messageElement.innerHTML = "<p class='text-white'>Login successful!</p>";
+        // Save the user's name in localStorage
+        localStorage.setItem("loggedInUserName", userFound[2]);
 
         // 登入成功後導向至 main.html
         window.location.href = 'main.html';
+
       } else {
         // 更新訊息元素的內容
         messageElement.innerHTML = "<p class='text-white'>請輸入正確的帳號密碼</p>";

@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <script src="js/validate.js"></script>
+    <script>
+        // Retrieve the logged-in user's name from localStorage
+        var loggedInUserName = localStorage.getItem("loggedInUserName");
+
+        // Display the user's name in the header
+        if (loggedInUserName) {
+            document.getElementById("hello").innerText = "HI! " + loggedInUserName;
+        }
+    </script>
+</head>
+
 
 <body>
 
@@ -30,10 +43,14 @@
                 <a href="datalist.html" class="nav-item nav-link">資料清單</a>
 
             </div>
+            <span class="badge bg-light text-dark rounded-pill fs-6" id="hello">HI!
+                <!-- Username will be displayed here -->
+            </span>
             <a href="index.html" class="btn btn-outline-primary rounded-pill py-2 px-4 ms-3">登出</a>
-            <!-- <a href="index.html" class="btn  btn-outline-info rounded-pill py-2 px-4 ms-3 d-lg-block">登出</a> -->
+
         </div>
     </nav>
+
     <script>
         $(document).ready(function () {
             var currentPage = window.location.href;
