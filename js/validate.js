@@ -73,6 +73,15 @@ function logout() {
   // 其他相關清理代碼
 
   // 重定向到登出頁面或首頁
-  window.location.href = 'index.html'; // 或其他目標頁面
-  window.location.href = '../index.html'; // 或其他目標頁面
+  window.location.href = 'index.html';
+}
+
+function pages_logout() {
+  // 應用程式登出邏輯
+  localStorage.removeItem("loggedInUserName");
+  // 其他相關清理代碼
+
+  // 重定向到登出頁面或首頁
+
+  window.location.href = '../index.html';
 }
