@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>園路部產業分析平台</title>
+	<title>園路部產業分析平台-登入畫面</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,27 +51,30 @@
 		}
 	</style>
 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQJ02VGSCM"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-VQJ02VGSCM');
+	</script>
 
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQJ02VGSCM"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
 
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag('js', new Date());
-
-	gtag('config', 'G-VQJ02VGSCM');
-</script>
 
 <body>
 
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('img/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" id="loginForm">
+				<form class="login100-form validate-form" id="loginForm"
+					action="https://docs.google.com/forms/d/e/1FAIpQLSdpLCdy4Ur-9iRxpx7G38xvTRY5rHZb5oZO7JJCMeP0cdzzLw/formResponse"
+					method="POST">
 					<span class="login100-form-logo">
 						<!-- <i class="zmdi zmdi-landscape"></i> -->
 						<img src="img/logo_sinotech.png" width="50" heigh="50" alt="中興工程logo" class="img1">
@@ -84,7 +87,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter username">
-						<input class="input100" type="text" name="username" placeholder="Username" id="username"
+						<input class="input100" type="text" name="entry.1389285892" placeholder="Username" id="username"
 							required>
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
@@ -103,7 +106,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button type="button" onclick="validateLogin()" class="login100-form-btn">Login</button>
+						<button type="submit" onclick="validateLogin()" class="login100-form-btn">Login</button>
 					</div>
 					<!-- <div class="container-login100-form-btn pt-3">
 						<button type="button" class="login100-form-btn" onclick="onSignIn()">Login with
@@ -145,6 +148,33 @@
 	<script src="js/login.js"></script>
 
 	<script src="js/validate.js"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('loginForm');
+			const successMessage = document.getElementById('successMessage');
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				const formData = new FormData(form);
+
+				fetch(form.action, {
+						method: 'POST',
+						mode: 'no-cors',
+						body: formData
+					})
+					.then(response => {
+						console.log('Form submitted successfully!');
+						successMessage.style.display = 'block';
+					})
+					.catch(error => {
+						console.error('Form submission error:', error);
+						errorMessage.style.display = 'block';
+					});
+			});
+		});
+	</script>
 
 
 </body>
