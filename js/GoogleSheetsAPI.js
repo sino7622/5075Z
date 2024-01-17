@@ -185,8 +185,8 @@ $(document).ready(function () {
 //最新消息
 $(document).ready(function () {
     const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
-    const sheetId = '1UNzuQipJSJJZiqg_6Bv9RebYd7-De_901Ksb7-WX3cI';
-    const range = 'news!A2:C7';
+    const sheetId = '1pRS2CjAbqOb8WPPPhNsPJs94y-70LyA6fmkpe_SgWiA';
+    const range = '表單回應 1!A2:E6';
     const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
 
     $.get(apiUrl, function (data) {
@@ -200,9 +200,11 @@ $(document).ready(function () {
 
                         <div class="col-lg-12">
                             <div class="feature-item bg-light rounded text-center p-4">
-                                <i class="fa fa-3x ${row[2]} text-primary mb-4"></i>
-                                <h5 class="mb-3">${row[1]}</h5>
-                                <p class="m-0">${row[0]}</p>
+                                <i class="fa ${row[4]} fa-3x text-primary mb-4"></i>
+                                <h3 class="mb-3">${row[2]}</h3>
+                                <p class="m-0 fs-5">${row[3]}</p>
+                                <span class="badge rounded-pill bg-primary text-white mt-3">${row[0]}，發布人：${row[1]}</span>
+
                             </div>
                         </div>
                 </div>
