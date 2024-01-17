@@ -35,6 +35,7 @@
 
 </head>
 
+
 <body>
     <!-- Google Sheets Data -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -60,18 +61,17 @@
                 <div class="container px-lg-5">
                     <div class="row g-5 align-items-end">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">產業網絡與群聚分析地理資訊查詢圖臺</h1>
+                            <h1 class="text-white mb-4 animated slideInDown">產業網絡與群聚分析<br>地理資訊查詢圖臺</h1>
                             <p class="text-white pb-3 animated slideInDown">
                                 本平台為中興工程顧問股份有限公司2023年度研發專案，園路部執行之5075Z產業網絡與群聚分析地理資訊查詢圖臺研究案(簡稱園路部產業分析平台)，以產業空間大數據資料庫之建置為目標，建立產業分析架構與流程，以及產業網絡與群聚分析地理資訊查詢圖臺之功能設計，解決現況產業分析來源蒐整耗時、分析成果資源分散等議題，提升部門產業分析作業之效率。
                             </p>
                             <a href="about.html"
-                                class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read
-                                More</a>
-                            <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
-                                Us</a>
+                                class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">關於平台</a>
+                            <a href="contact.html"
+                                class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">聯絡我們</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="" width="95%">
                         </div>
                     </div>
                 </div>
@@ -143,12 +143,14 @@
 
 
         <!-- Service Start -->
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5" id="analysis">
 
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-secondary justify-content-center"><span></span>產業分析+<span></span></p>
                     <h1 class="text-center mb-5">平台產業分析項目</h1>
+                    <p>產業分析的流程可分為「政策指導」、「現況分析」、「優勢產業」(分為產業鏈分析、產業群聚分析)及「發展建議」四大階段，各流程的階段任務與平台可支援的分析功能規劃如下：
+                        <span class="badge rounded-pill bg-secondary">操作提示：滑鼠移至項目，點選［→］可連接至查詢功能</span></p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -156,8 +158,8 @@
                             <div class="service-icon flex-shrink-0">
                                 <i class="fa fa-search fa-2x"></i>
                             </div>
-                            <h5 class="mb-3">政策報告</h5>
-                            <p class="m-0">XXXXXXXXXXXXXXXXX</p>
+                            <h5 class="mb-3">政策指導</h5>
+                            <p class="m-0">查詢內容包含產業市場趨勢、政府政策指導、研發報告書等資料</p>
                             <a class="btn btn-square" href="report.html"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -166,9 +168,9 @@
                             <div class="service-icon flex-shrink-0">
                                 <i class="fa fa-laptop-code fa-2x"></i>
                             </div>
-                            <h5 class="mb-3">等距圈分析</h5>
-                            <p class="m-0">XXXXXXXXXXXXXXXXX</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                            <h5 class="mb-3">現況分析</h5>
+                            <p class="m-0">專案中基地與周邊環境以及產業區位與發展的現況空間與統計資料分析報表</p>
+                            <a class="btn btn-square" href="current.html"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -176,9 +178,9 @@
                             <div class="service-icon flex-shrink-0">
                                 <i class="fab fa-facebook-f fa-2x"></i>
                             </div>
-                            <h5 class="mb-3">產業統計報表</h5>
-                            <p class="m-0">XXXXXXXXXXXXXXXXX</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                            <h5 class="mb-3">產業鏈分析</h5>
+                            <p class="m-0">基於工研院的產業分析報告，建立基地周邊的產業關聯地圖及產業鏈清單</p>
+                            <a class="btn btn-square" href="chain.html"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -186,9 +188,9 @@
                             <div class="service-icon flex-shrink-0">
                                 <i class="fa fa-mail-bulk fa-2x"></i>
                             </div>
-                            <h5 class="mb-3">產業熱區</h5>
-                            <p class="m-0">XXXXXXXXXXXXXXXXX</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                            <h5 class="mb-3">產業群聚分析</h5>
+                            <p class="m-0">產業群聚熱點與所屬行政區的優勢產業，以區位商數法進行計算</p>
+                            <a class="btn btn-square" href="hotspot.html"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -196,9 +198,9 @@
                             <div class="service-icon flex-shrink-0">
                                 <i class="fa fa-thumbs-up fa-2x"></i>
                             </div>
-                            <h5 class="mb-3">產業鏈分析</h5>
-                            <p class="m-0">XXXXXXXXXXXXXXXXX</p>
-                            <a class="btn btn-square" href="chain.html"><i class="fa fa-arrow-right"></i></a>
+                            <h5 class="mb-3">綜合排名</h5>
+                            <p class="m-0">不同行業於廠商家數、生產總額或工廠分布等不同主題的綜合排名</p>
+                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -206,9 +208,9 @@
                             <div class="service-icon flex-shrink-0">
                                 <i class="fab fa-android fa-2x"></i>
                             </div>
-                            <h5 class="mb-3">優勢產業分析</h5>
-                            <p class="m-0">XXXXXXXXXXXXXXXXX</p>
-                            <a class="btn btn-square" href="hotspot.html"><i class="fa fa-arrow-right"></i></a>
+                            <h5 class="mb-3">資料來源</h5>
+                            <p class="m-0">本平台所使用的資料來源說明，包含資料出處、政府開放資料位置及說明</p>
+                            <a class="btn btn-square" href="datalist.html"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

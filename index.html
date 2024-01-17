@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="img/icons/favicon.ico" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -30,6 +30,26 @@
 	<!--===============================================================================================-->
 	<!-- 引入 Google Sign-In API -->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<style>
+		.box {
+			position: relative;
+		}
+
+		.box:hover::before {
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+			content: '(・ω・)ノ園路部數位創新組-5075Z測試版';
+		}
+
+		.img1 {
+			/*元素的灰度*/
+
+			/*考慮瀏覽器相容性：相容Chrome,Safari,Opera*/
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+		}
+	</style>
 
 
 </head>
@@ -49,14 +69,15 @@
 <body>
 
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('img/bg-01.jpg');">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" id="loginForm">
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+						<!-- <i class="zmdi zmdi-landscape"></i> -->
+						<img src="img/logo_sinotech.png" width="50" heigh="50" alt="中興工程logo" class="img1">
 					</span>
 					<span class="login100-form-title p-t-27">
-						園路部產業分析平台
+						園路部產業分析平台<br>(測試版)
 					</span>
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in
@@ -91,11 +112,11 @@
 					</div> -->
 					<div id="message" class="text-center p-t-50"></div>
 
-					<!-- <div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							Forgot Password?
+					<div class="text-center p-t-40">
+						<a class="txt1 box" href="#">
+							中興工程顧問股份有限公司-園區及路航工程部
 						</a>
-					</div> -->
+					</div>
 				</form>
 			</div>
 		</div>
@@ -124,9 +145,6 @@
 	<script src="js/login.js"></script>
 
 	<script src="js/validate.js"></script>
-
-
-
 
 
 </body>

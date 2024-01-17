@@ -270,7 +270,7 @@ $(document).ready(function () {
                                 <!-- Modal content goes here -->
                                 <h5 class="">${row[5]}</h5>
                                 <p>${row[7]}</p>
-                                <img class="img-fluid w-100" src="img_chain/${row[6]}.jpg" alt="">
+                                <img class="img-fluid w-100" src="img/chain/${row[6]}.jpg" alt="">
                             </div>
                             
                         </div>
