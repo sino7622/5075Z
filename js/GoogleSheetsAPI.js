@@ -244,9 +244,9 @@ $(document).ready(function () {
                 <div class="col-lg-4 col-md-6 portfolio-item ${row[2]} ">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img_chain/${row[6]}.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/chain/${row[6]}.jpg" alt="">
                             <div class="portfolio-overlay">
-                            <!--<a class="btn btn-square btn-outline-light mx-1" href="img_chain/${row[6]}.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>-->
+                            <!--<a class="btn btn-square btn-outline-light mx-1" href="img/chain/${row[6]}.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>-->
                                 <a class="btn btn-square btn-outline-light mx-1" data-bs-toggle="modal" data-bs-target="#chainModal${row[4]}">
                                     <i class="fa fa-info"></i>
                                 </a>
