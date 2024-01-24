@@ -360,3 +360,119 @@ $(document).ready(function () {
 });
 
     
+//資料清單
+$(document).ready(function () {
+    const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
+    const sheetId = '1KugYhhBw7lKDimouh0JT51g4XSjcrGig5Jf_bcQP3JQ';
+    // Fetch data for datalist items
+    const dataRange = 'datalist!A2:J48';
+    const dataApiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${dataRange}?key=${apiKey}`;
+
+    // Fetch data for filter items
+    const dfilterRange = 'type!A2:B7';
+    const dfilterApiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${dfilterRange}?key=${apiKey}`;
+
+
+    // Fetch data from Google Sheets
+    $.get(dataApiUrl, function (data) {
+        const values = data.values;
+
+        const dataTable = $('#datalist_item tbody');
+        values.forEach(function (row) {
+            const tableRow = '<tr>' + row.map(col => `<td>${col}</td>`).join('') + '</tr>';
+            dataTable.append(tableRow);
+
+            const teamItemHtml = `
+                <div class="col-lg-4 col-md-6 portfolio-item ${row[0]} ">
+                    <div class="rounded overflow-hidden">
+                        
+                        <div class="bg-light p-4">
+                            <p class="text-primary fw-medium mb-2">${row[1]}</p>
+                            <h6 class="lh-base">${row[2]}</h6>
+                            
+                            <p class="pt-1">資料單位：${row[4]}
+                            <br>資料來源：${row[5]}</p>
+                            <div class="d-flex justify-content-center"><a class="btn ${row[7]} mx-1 btn-sm" href="${row[9]}" target="_blank"> ${row[8]} </a></div>
+                        </div>  
+                        
+                    </div>
+                </div>
+                
+            `;
+
+            $('#datalist_item').append(teamItemHtml);
+        });
+
+        // Fetch filter items data
+        $.get(dfilterApiUrl, function (filterData) {
+            const filterValues = filterData.values;
+
+            // Dynamically generate and append the filter elements
+            const filterRowDiv = document.createElement('div');
+            filterRowDiv.className = 'row mt-n2';
+
+            const filterColDiv = document.createElement('div');
+            filterColDiv.className = 'col-12 text-center';
+
+            const filterUlElement = document.createElement('ul');
+            filterUlElement.className = 'list-inline mb-5';
+            filterUlElement.id = 'portfolio-flters';
+
+            // Create filterItems array dynamically based on Google Sheets data
+            const filterItems = filterValues.map(row => {
+                return {
+                    className: 'mx-2',
+                    dataFilter: row[0], // Assuming column A contains dataFilter values
+                    text: row[1] // Assuming column B contains text values
+                };
+            });
+
+            // Add the "全部" filter item at the beginning
+            filterItems.unshift({
+                className: 'mx-2 active',
+                dataFilter: '*',
+                text: '全部'
+            });
+
+            filterItems.forEach(item => {
+                const filterLiElement = document.createElement('li');
+                filterLiElement.className = item.className;
+                filterLiElement.setAttribute('data-filter', item.dataFilter);
+                filterLiElement.textContent = item.text || '';
+                filterUlElement.appendChild(filterLiElement);
+            });
+
+            filterColDiv.appendChild(filterUlElement);
+            filterRowDiv.appendChild(filterColDiv);
+            $('#datalist_item').before(filterRowDiv);
+
+            // Initialize Isotope after adding portfolio items and filter elements
+            const $portfolioGrid = $('#datalist_item').isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+
+            // Filtering logic for list-inline items
+            $('#portfolio-flters').on('click', 'li', function () {
+                const filterValue = $(this).attr('data-filter');
+                $portfolioGrid.isotope({ filter: filterValue });
+
+                // Highlight the selected filter item
+                $('#portfolio-flters li').removeClass('active');
+                $(this).addClass('active');
+
+                // Toggle display based on filter
+                $portfolioGrid.children().each(function () {
+                    const $item = $(this);
+                    const itemFilter = $item.attr('data-filter');
+                    const isHidden = !($item.hasClass(filterValue) || filterValue === '*');
+
+                    $item.toggleClass('hidden', isHidden);
+                });
+            });
+
+            // Initial show all items
+            $portfolioGrid.children().removeClass('hidden');
+        });
+    });
+});
