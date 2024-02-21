@@ -225,7 +225,7 @@ $(document).ready(function () {
     const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
     const sheetId = '1fOub1yuYBMmABDRcWJm4PnRiYjXyw2-fxGt7sqilvQ4';
     // Fetch data for chain items
-    const chainRange = 'chain!A2:H86';
+    const chainRange = 'chain!A2:I86';
     const chainApiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${chainRange}?key=${apiKey}`;
 
     // Fetch data for filter items
@@ -248,10 +248,10 @@ $(document).ready(function () {
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="img/chain/${row[6]}.jpg" alt="">
                             <div class="portfolio-overlay">
-                            <!--<a class="btn btn-square btn-outline-light mx-1" href="img/chain/${row[6]}.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>-->
                                 <a class="btn btn-square btn-outline-light mx-1" data-bs-toggle="modal" data-bs-target="#chainModal${row[4]}">
                                     <i class="fa fa-info"></i>
                                 </a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="${row[8]}" target=”_blank”><i class="fa fa-download"></i></a>
                             </div>
                         </div>
                         <div class="bg-light p-4">

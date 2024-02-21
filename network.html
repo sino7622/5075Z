@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>園路部產業分析平台-集團網絡圖</title>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="js/D3.js"></script>
+    <style>
+        svg {
+            width: 100%;
+            height: 85%;
+            position: absolute;
+            top: 15%;
+            left: 0;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQJ02VGSCM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VQJ02VGSCM');
+    </script>
+</head>
+
+<body>
+    <div class="container-xxl py-5">
+        <div class="row g-4">
+            <!-- Container for the buttons -->
+            <div id="fliter-container">
+                <!-- Dropdown (select) for group selection -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">搜尋集團關鍵字</span>
+                    <input type="text" id="search-input" placeholder="篩選下拉選單集團名稱" aria-describedby="basic-addon3"
+                        class="form-control">
+                    <span class="input-group-text" id="basic-addon3">選取集團</span>
+                    <select id="group-dropdown" class="form-select"></select></div>
+
+                <div id="button-container"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl py-5" id="network-graph-container">
+
+    </div>
+
+
+</body>
+
+</html>
