@@ -242,7 +242,7 @@ d3.select("#group-dropdown").on("change", function () {
   var selectedGroup = this.value;
   if (selectedGroup) {
     // 讀取CSV檔案
-    d3.csv("../csv/Gmerge_2016.csv").then(function (data) {
+    d3.csv("https://raw.githubusercontent.com/sino7622/5075Z/main/csv/Gmerge_2016.csv").then(function (data) {
       // 過濾資料
       var filteredData = data.filter(function (d) {
         return d.name === selectedGroup;
@@ -261,7 +261,7 @@ d3.select("#group-dropdown").on("change", function () {
 });
 
 // 初始化畫面
-d3.csv("../csv/Gmerge_2016.csv").then(function (data) {
+d3.csv("https://raw.githubusercontent.com/sino7622/5075Z/main/csv/Gmerge_2016.csv").then(function (data) {
   ///////////////////////////////////////////// 下拉選單篩選設置 /////////////////////////////////////////////
   var uniqueGroups = [...new Set(data.map(d => d.name))];
   //var taiwanFilterButton = d3.select("#taiwan-filter-container");
