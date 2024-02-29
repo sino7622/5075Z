@@ -242,7 +242,7 @@ d3.select("#group-dropdown").on("change", function () {
   var selectedGroup = this.value;
   if (selectedGroup) {
     // 讀取CSV檔案
-    d3.csv("../csv/Gmerge_2016.csv").then(function (data) {
+    d3.csv("https://github.com/sino7622/5075Z/blob/main/csv/Gmerge_2016.csv").then(function (data) {
       // 過濾資料
       var filteredData = data.filter(function (d) {
         return d.name === selectedGroup;
