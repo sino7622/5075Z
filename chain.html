@@ -86,45 +86,103 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
-
-
-        <!-- Projects Start -->
-
-        <div class="container-xxl py-5" style="height: 12500px;">
-            <div class="container py-5 px-lg-5">
+        <!-- 站內導覽列 -->
+        <div id="index"></div>
+        <div class="container-xxl">
+            <div class="container px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>產業鏈資料搜尋<span></span></p>
-                    <h1 class="text-center mb-5">產業鏈架構圖</h1>
+                    <p class="section-title text-secondary justify-content-center"><span></span>索引<span></span>
+                    </p>
+                    <h1 class="text-center mb-3">產業鏈分析項目</h1>
+                    <div class="row  px-lg-5 mb-5"><span class="badge rounded-pill bg-secondary fs-6">操作提示：滑鼠移至項目，點選 <i
+                                class="fa fa-arrow-right"></i> 可連接至查詢功能</span>
+                    </div>
+                    <!-- 各項目連結 -->
+                    <div class="row g-4">
+
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="service-item d-flex flex-column text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="fa fa-map fa-2x"></i>
+                                </div>
+                                <span class="text-secondary">產業鏈資料搜尋</span>
+                                <h4 class="mb-3">產業鏈查詢圖台</h4>
+                                <p class="m-0">建置中</p>
+                                <a class="btn btn-square disabled" href="#map"><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="service-item d-flex flex-column text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="fab fa-hubspot fa-2x"></i>
+                                </div>
+                                <span class="text-secondary">廠商資料查詢</span>
+                                <h4 class="mb-3">各大集團網絡圖</h4>
+                                <p class="m-0">分集團顯示子母公司的網絡圖(開新網頁)</p>
+                                <a class="btn btn-square" href="network.html" target="_blank"><i
+                                        class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="service-item d-flex flex-column text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="fa fa-image fa-2x"></i>
+                                </div>
+                                <span class="text-secondary">產業鏈資料搜尋</span>
+                                <h4 class="mb-3">產業鏈架構圖</h4>
+                                <p class="m-0">查詢及下載PPT檔案。</p>
+                                <a class="btn btn-square" href="#list"><i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="row g-4 portfolio-container " id="chain_item"></div>
             </div>
+            <!-- 站內導覽列 -->
+
+
+            <!-- Projects Start -->
+
+            <div class="container-xxl py-5" style="height: 12500px;" id="list">
+                <div class="container py-5 px-lg-5">
+                    <div class="wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="section-title text-secondary justify-content-center"><span></span>產業鏈資料搜尋<span></span>
+                        </p>
+                        <h1 class="text-center">產業鏈架構圖<br><a class="btn mx-1" href="#index"><i
+                                    class="fab bi bi-book"></i> 回索引</a></h1>
+                        <div class="row  px-lg-5 mb-5"><span
+                                class="badge rounded-pill bg-secondary fs-6">操作提示：可點選下方產業主題，篩選相關產業項目</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row g-4 portfolio-container" id="chain_item"></div>
+                </div>
+            </div>
+            <!-- Projects End -->
+
+
+            <!-- footer start -->
+            <div class="footerpage"></div>
+            <!-- footer End -->
+
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
-        <!-- Projects End -->
 
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-        <!-- footer start -->
-        <div class="footerpage"></div>
-        <!-- footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
 
 
 </body>

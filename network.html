@@ -14,9 +14,9 @@
     <style>
         svg {
             width: 100%;
-            height: 85%;
+            height: 80%;
             position: absolute;
-            top: 15%;
+            top: 20%;
             left: 0;
         }
     </style>
@@ -36,18 +36,20 @@
 
 <body>
     <div class="container-xxl py-5">
+        <h1>全台集團網絡圖<a class="btn btn-info mx-3" href="chain.html"><i class="fab bi bi-book"></i> 回索引</a></h1>
         <div class="row g-4">
             <!-- Container for the buttons -->
             <div id="fliter-container">
                 <!-- Dropdown (select) for group selection -->
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon3">搜尋集團關鍵字</span>
+                    <span class="input-group-text" id="basic-addon3">集團名稱</span>
+                    <select id="group-dropdown" class="form-select"></select>
+                    <span class="input-group-text" id="basic-addon3">搜尋選單集團關鍵字</span>
                     <input type="text" id="search-input" placeholder="篩選下拉選單集團名稱" aria-describedby="basic-addon3"
                         class="form-control">
-                    <span class="input-group-text" id="basic-addon3">選取集團</span>
-                    <select id="group-dropdown" class="form-select"></select></div>
+                </div>
 
-                <div id="button-container"></div>
+                <div id="button-container">請使用下拉選單先選擇集團名稱，下方顯示網絡圖</div>
 
             </div>
         </div>

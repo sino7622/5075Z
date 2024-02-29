@@ -140,47 +140,80 @@ $(document).ready(function () {
     });
 });
 
-    // 國土計畫(縣市)
-    $(document).ready(function () {
-        const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
-        const sheetId = '1NhsY9wH0S2pXpuVU6Y9LDG1lC_3zFBaNXmxWiwWOyas';
-        const range = '表格清單!A2:E21';
-        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
-
-        $.get(apiUrl, function (data) {
-            const values = data.values;
-
-            const dataTable = $('#land-table tbody');
-            values.forEach(function (row) {
-                const tableRow = '<tr>' + row.map(col => `<td>${col}</td>`).join('') + '</tr>';
-                dataTable.append(tableRow);
-
-                const teamItemHtml = `
-                
-                    <div class="col-lg-6 col-md-6 wow fadeInUp " data-wow-delay="0.1s">
-                        <div class="team-item bg-light rounded">
-                            <div class="text-center border-bottom p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="" alt="">
-                                <h5>${row[1]}</h5>
-                                <span>${row[0]}</span>
-                            </div>
-                            <div class="d-flex justify-content-center p-4">
-                                <a class="btn mx-1" target="_blank" href="${row[2]}">
-                                    <i class="fab bi bi-globe"></i> 網站
-                                </a>
-                                <a class="btn mx-1" target="_blank" href="${row[3]}"><i class="fab bi bi-download"></i> 計畫書</a>
-                                <a class="btn mx-1" target="_blank" href="${row[4]}"><i class="fab bi bi-download"></i>
-                                    技術報告</a>
-                            </div>
+// 國土計畫(縣市)
+$(document).ready(function () {
+    const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
+    const sheetId = '1NhsY9wH0S2pXpuVU6Y9LDG1lC_3zFBaNXmxWiwWOyas';
+    const range = '表格清單!A2:E21';
+    const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+    $.get(apiUrl, function (data) {
+        const values = data.values;
+        const dataTable = $('#land-table tbody');
+        values.forEach(function (row) {
+            const tableRow = '<tr>' + row.map(col => `<td>${col}</td>`).join('') + '</tr>';
+            dataTable.append(tableRow);
+            const teamItemHtml = `
+            
+                <div class="col-lg-6 col-md-6 wow fadeInUp " data-wow-delay="0.1s">
+                    <div class="team-item bg-light rounded">
+                        <div class="text-center border-bottom p-4">
+                            <img class="img-fluid rounded-circle mb-4" src="" alt="">
+                            <h4>${row[1]}</h4>
+                            <span>${row[0]}</span>
+                        </div>
+                        <div class="d-flex justify-content-center p-4">
+                            <a class="btn mx-1" target="_blank" href="${row[2]}">
+                                <i class="fab bi bi-globe"></i> 網站
+                            </a>
+                            <a class="btn mx-1" target="_blank" href="${row[3]}"><i class="fab bi bi-download"></i> 計畫書</a>
+                            <a class="btn mx-1" target="_blank" href="${row[4]}"><i class="fab bi bi-download"></i>
+                                技術報告</a>
                         </div>
                     </div>
-                
-                `;
-
-                $('#report_land').append(teamItemHtml);
-            });
+                </div>
+            
+            `;
+            $('#report_land').append(teamItemHtml);
         });
     });
+});
+
+// 都市計畫查詢系統
+$(document).ready(function () {
+    const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
+    const sheetId = '1KugYhhBw7lKDimouh0JT51g4XSjcrGig5Jf_bcQP3JQ';
+    const range = 'UPweb!A2:E21';
+    const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+
+    $.get(apiUrl, function (data) {
+        const values = data.values;
+        const dataTable = $('#up-table tbody');
+        values.forEach(function (row) {
+            const tableRow = '<tr>' + row.map(col => `<td>${col}</td>`).join('') + '</tr>';
+            dataTable.append(tableRow);
+            const teamItemHtml = `
+            
+                <div class="col-lg-6 col-md-6 wow fadeInUp " data-wow-delay="0.1s">
+                    <div class="team-item bg-light rounded">
+                        <div class="text-center border-bottom p-4">
+                            <img class="img-fluid rounded-circle mb-4" src="" alt="">
+                            <h4><span class="badge bg-primary">${row[0]}</span></h4>
+                            <h4>${row[1]}</h4>
+                            <span>${row[2]}</span>
+                        </div>
+                        <div class="d-flex justify-content-center p-4">
+                            <a class="btn mx-1" target="_blank" href="${row[3]}">
+                                <i class="fab bi bi-globe"></i> 網站
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+            `;
+            $('#report_up').append(teamItemHtml);
+        });
+    });
+});
 
 //最新消息
 $(document).ready(function () {
