@@ -261,7 +261,7 @@ d3.select("#group-dropdown").on("change", function () {
 });
 
 // 初始化畫面
-d3.csv("../csv/Gmerge_2016.csv").then(function (data) {
+d3.csv("https://github.com/sino7622/5075Z/blob/main/csv/Gmerge_2016.csv").then(function (data) {
   ///////////////////////////////////////////// 下拉選單篩選設置 /////////////////////////////////////////////
   var uniqueGroups = [...new Set(data.map(d => d.name))];
   //var taiwanFilterButton = d3.select("#taiwan-filter-container");
