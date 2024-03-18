@@ -182,7 +182,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
     const sheetId = '1KugYhhBw7lKDimouh0JT51g4XSjcrGig5Jf_bcQP3JQ';
-    const range = 'UPweb!A2:E21';
+    const range = 'UPweb!A2:E26';
     const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
 
     $.get(apiUrl, function (data) {
