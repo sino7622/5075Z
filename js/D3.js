@@ -180,7 +180,7 @@ function createForceDirectedGraph(data) {
   }
   ///////////////////////////////////////////// 定義拖曳事件處理函數 /////////////////////////////////////////////
 
-  ///////////////////////////////////////////// 下載按鈕 /////////////////////////////////////////////
+  ///////////////////////////////////////////// 下載png按鈕 /////////////////////////////////////////////
   // Create buttonsContainer variable
   var buttonsContainer = d3.select("#button-container");
   buttonsContainer.append("button")
@@ -213,7 +213,7 @@ function createForceDirectedGraph(data) {
     link.download = selectedGroup + "_network_graph.png";  // Set the filename
     link.click();
   }
-  ///////////////////////////////////////////// 下載按鈕 /////////////////////////////////////////////
+  ///////////////////////////////////////////// 下載png按鈕 /////////////////////////////////////////////
 
   ///////////////////////////////////////////// 創建縮放函數 /////////////////////////////////////////////
   var zoom = d3.zoom()
@@ -332,11 +332,6 @@ d3.csv("https://raw.githubusercontent.com/sino7622/5075Z/main/csv/Gmerge_2016.cs
     var searchText = d3.select("#search-input").node().value.toLowerCase();
     var selectedGroup = dropdown.node().value;
 
-    // // 過濾資料
-    // var filteredData = data.filter(function (d) {
-    //   return (selectedGroup === "" || d.name === selectedGroup) &&
-    //          (d.name.toLowerCase().includes(searchText)) 
-    // });
     // 過濾資料
     var filteredData = data.filter(function (d) {
       var matchesGroup = selectedGroup === "" || d.name === selectedGroup;
@@ -344,9 +339,33 @@ d3.csv("https://raw.githubusercontent.com/sino7622/5075Z/main/csv/Gmerge_2016.cs
     });
     // 呼叫創建力導向圖的函數
     createForceDirectedGraph(filteredData);
+
+    // 新增下載 CSV 的按鈕
+    var buttonsContainer = d3.select("#button-container");
+    buttonsContainer.selectAll("#download-csv-button").remove(); // 清除舊按鈕
+    buttonsContainer.append("button")
+        .attr("id", "download-csv-button")
+        .attr("class", "btn btn-primary m-2")
+        .attr("type", "button")
+        .text("下載 CSV")
+        .on("click", function() {
+        downloadCSV(filteredData);
+        });
     
   }
+  // Create a function to download the CSV data
+    function downloadCSV(data) {
+        var csv = Papa.unparse(data);
+        var blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+        var selectedGroup = dropdown.node().value;
+        var link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = selectedGroup + "_network_data.csv"; // 設置下載文件的名稱
+        document.body.appendChild(link);
+        link.click();
+
+        // 釋放 URL 物件
+        URL.revokeObjectURL(link.href);
+  }
+   
 });
-
-
-

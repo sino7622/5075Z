@@ -9,8 +9,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <script src="js/D3.js"></script>
+    <!-- 包含 Papa Parse -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
     <style>
         svg {
             width: 100%;
@@ -18,6 +24,7 @@
             position: absolute;
             top: 20%;
             left: 0;
+            z-index: -999;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -36,7 +43,14 @@
 
 <body>
     <div class="container-xxl py-5">
-        <h1>全台集團網絡圖<a class="btn btn-info mx-3" href="chain.html"><i class="fab bi bi-book"></i> 回索引</a></h1>
+        <h1>全台集團網絡圖<a class="btn btn-primary mx-2" href="chain.html"><i class="fa fa-book-open"></i> 回索引</a>
+            <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#infoModal"><i
+                    class="fa fa-info"></i>
+                資料來源 </button>
+            <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#csvModal"><i
+                    class="fa fa-file-excel"></i>
+                csv亂碼處理
+            </button></h1>
         <div class="row g-4">
             <!-- Container for the buttons -->
             <div id="fliter-container">
@@ -49,7 +63,7 @@
                         class="form-control">
                 </div>
 
-                <div id="button-container">請使用下拉選單先選擇集團名稱，下方顯示網絡圖</div>
+                <div id="button-container" class="mb-5 float-end">請使用下拉選單先選擇集團名稱，下方顯示網絡圖</div>
 
             </div>
         </div>
@@ -57,7 +71,59 @@
     <div class="container-xxl py-5" id="network-graph-container">
 
     </div>
+    <!-- infoModal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">資料來源</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>由 綠色公民行動聯盟 透明足跡 計畫 <a href="https://thaubing.gcaa.org.tw/group/search"
+                            class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>整理。
+                    </p>
+                    <p>原始來源為 「公開資訊觀測站」2013-2016公司財報<a href="https://mops.twse.com.tw/mops/web/index"
+                            class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>，</p>
+                    <p>經由「2017
+                        g0v公民科技創新獎助金計劃」整理彙整 <a href="https://github.com/starsdog/openGroups"
+                            class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>。</p>
 
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">我知道了!</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- csvModal -->
+    <div class="modal fade" id="csvModal" tabindex="-1" aria-labelledby="csvModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="csvModalLabel">csv亂碼處理步驟</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>步驟1：開啟一個空白的Excel，點選「資料」選擇「取得外部資料」後，點選「從文字檔」選擇匯出的CSV 檔案。</p>
+                    <p>步驟2：從對話框中選擇UTF-8 編碼。</p>
+                    <p>步驟3：選擇分隔符號為逗點。</p>
+                    <p>步驟4：在欄位格式中選擇「一般」並點選「完成」。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">我知道了!</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

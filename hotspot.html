@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>園路部產業分析平台-產業群聚分析</title>
+    <title>園路部產業分析平台-產業群聚區位商數</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -106,7 +106,7 @@
                                 <span class="text-secondary">群聚熱區地圖</span>
                                 <h4 class="mb-3">產業群聚查詢圖台(行政區)</h4>
                                 <p class="m-0">使用區位商數法分析產業群聚狀況。</p>
-                                <a class="btn btn-square" href="#map"><i class="fa fa-arrow-right"></i></a>
+                                <a class="btn btn-square" href="hotspot.html"><i class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -117,7 +117,7 @@
                                 <span class="text-secondary">群聚熱區地圖</span>
                                 <h4 class="mb-3">產業群聚查詢圖台(工廠密度)</h4>
                                 <p class="m-0">使用工廠區位密度分析產業群聚狀況。</p>
-                                <a class="btn btn-square" href="#spotmap" target="_blank"><i
+                                <a class="btn btn-square" href="spotmap.html" target="_blank"><i
                                         class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                                 <span class="text-secondary">產業資料查詢</span>
                                 <h4 class="mb-3">產業發展歷程(各縣市)</h4>
                                 <p class="m-0">建置中</p>
-                                <a class="btn btn-square disabled" href="#timeline"><i
+                                <a class="btn btn-square disabled" href="timeline.html"><i
                                         class="fa fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -140,13 +140,15 @@
 
             <!-- Projects Start -->
 
-            <div class="container-xxl pt-5" id="map">
+            <div class="container-xxl pt-5">
                 <div class="container px-lg-5">
                     <div class="wow fadeInUp" data-wow-delay="0.1s">
                         <p class="section-title text-secondary justify-content-center"><span></span>群聚熱區地圖<span></span>
                         </p>
                         <h1 class="text-center">產業群聚查詢圖台(行政區)<br><a class="btn mx-1" href="#index"><i
-                                    class="fab bi bi-book"></i> 回索引</a></h1>
+                                    class="fab bi bi-book"></i> 回索引</a><a class="btn mx-1" href="#map1"><i
+                                    class="fa fa-map-pin"></i> 行業別大分類-縣市vs全國</a>
+                            <a class="btn mx-1" href="#map2"><i class="fa fa-map-pin"></i> 行業別大分類-鄉鎮市區 vs 縣市</a></h1>
                         <div class="card mb-0">
                             <div class="card-header">
                                 <span class="float-start text-dark">功能說明</span>
@@ -177,7 +179,7 @@
                 </div>
             </div>
         </div>
-
+        <h2 class="text-center my-3" id="map1">行業別大分類-縣市vs全國</h2>
         <!-- Tableau Start -縣市vs全國-->
         <!-- <script type='module'
             src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
@@ -215,7 +217,7 @@
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
-
+        <h2 class="text-center my-3" id="map2">行業別大分類-鄉鎮市區 vs 縣市</h2>
         <!-- Tableau Start - 鄉鎮市區 vs 縣市-->
         <!-- <script type='module'
             src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
@@ -256,120 +258,6 @@
 
         <!-- Tableau End -->
         <!-- Projects End -->
-        <!-- Projects Start -->
-        <div class="container-xxl pt-5" id="spotmap">
-            <div class="container px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>群聚熱區地圖<span></span>
-                    </p>
-                    <h1 class="text-center">產業群聚查詢圖台(工廠密度)<br><a class="btn mx-1" href="#index"><i
-                                class="fab bi bi-book"></i> 回索引</a></h1>
-                    <div class="card mb-0">
-                        <div class="card-header">
-                            <span class="float-start text-dark">功能說明</span>
-                            <span class="badge bg-light text-dark float-end">(更新時間：2024/3/1)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                計算公式：核密度分析<br>
-                                透過核密度推估法，依不同產業別的工廠點位，繪製產業密集分布圖。</h5>
-                            <p class="card-text">
-                                資料項目：「登記工廠名錄」<a href="https://data.gov.tw/dataset/6569"
-                                    class="badge bg-secondary text-dark" target="_blank"><i
-                                        class=" bi bi-link"></i></a>，計畫使用TGOS門牌定位服務進行展點(工廠資料為112年7月)
-                                資料來源：政府資料開放平臺，經濟部產業園區管理局</p>
-
-                        </div>
-
-                    </div>
-                    <!-- <div class="p-0 m-0 text-center text-white">
-                        <span>yuanlu.sinotech@gmail.com /</span>
-                        <span>oklobn.1961</span>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <!-- Tableau Start-->
-        <!-- <script type='module'
-            src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
-        </script>
-        <tableau-viz id='tableau-viz'
-            src='https://prod-apnortheast-a.online.tableau.com/t/sinotech22/views/_17092826443830/Main' width='1920'
-            height='850' hide-tabs toolbar='bottom'></tableau-viz> -->
-
-        <!-- Tableau Public -->
-        <div class='tableauPlaceholder' id='viz1709282999341' style='position: relative'><noscript><a href='#'><img
-                        alt='Main '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_17092827045690&#47;Main&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='_17092827045690&#47;Main' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_17092827045690&#47;Main&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='zh-TW' />
-                <param name='filter' value='publish=yes' /></object></div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1709282999341');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
-            } else if (divElement.offsetWidth > 500) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
-            } else {
-                vizElement.style.width = '100%';
-                vizElement.style.height = '827px';
-            }
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
-
-        <!-- Tableau End -->
-        <!-- Projects End -->
-        <!-- Projects Start -->
-
-        <!-- <div class="container-xxl pt-5" id="timeline">
-            <div class="container px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>產業資料查詢<span></span>
-                    </p>
-                    <h1 class="text-center">產業發展歷程(各縣市)<br><a class="btn mx-1" href="#spotmap"><i
-                                class="fab bi bi-book"></i> 回索引</a></h1>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <span class="float-start text-dark">功能說明</span>
-                            <span class="badge bg-light text-dark float-end">(更新時間：2024/3/1)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                依工研院2022年臺灣產業群聚發展地圖，整理各縣市產業發展時間軸。</h5>
-                            <p class="card-text">
-                                資料來源：臺灣產業群聚發展地圖(2022年)，財團法人工業技術研究院</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Tableau Start-->
-        <!-- Tableau Public -->
-
-
-        <!-- Tableau End -->
-        <!-- Projects End -->
-
 
         <!-- footer start -->
         <div class="container-xxl position-relative p-0">
