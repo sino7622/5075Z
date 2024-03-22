@@ -219,7 +219,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
     const sheetId = '1pRS2CjAbqOb8WPPPhNsPJs94y-70LyA6fmkpe_SgWiA';
-    const range = '表單回應 1!A2:E6';
+    const range = '表單回應 1!G2:K6';
     const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
 
     $.get(apiUrl, function (data) {
