@@ -45,12 +45,12 @@ function createForceDirectedGraph(data) {
 
   // 建立力導向圖佈局
   var simulation = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(links).id(d => d.id).distance(250)) // 調整連線的長度
-    .force("charge", d3.forceManyBody().strength(-150).distanceMax(400)) // 調整節點之間的最大排斥距離和排斥強度
+    .force("link", d3.forceLink(links).id(d => d.id).distance(200)) // 調整連線的長度
+    .force("charge", d3.forceManyBody().strength(-100).distanceMax(350)) // 調整節點之間的最大排斥距離和排斥強度
     .force("center", d3.forceCenter(width / 2, height / 2));
 
   // 建立 forceCollide 力量
-  var collisionForce = d3.forceCollide().radius(100); // 調整 radius 的值
+  var collisionForce = d3.forceCollide().radius(50); // 調整 radius 的值
 
   // 將 forceCollide 加入到 simulation 中
   simulation.force("collision", collisionForce);
@@ -120,7 +120,7 @@ function createForceDirectedGraph(data) {
   // 新增按鈕切換節點標籤顯示
   buttonsContainer.append("button")
     .attr("id", "toggle-label-button")
-    .attr("class", "btn btn-primary mx-2")
+    .attr("class", "btn btn-primary m-2")
     .attr("type", "button")
     .text("關閉節點標籤")
     .on("click", function () {
@@ -185,7 +185,7 @@ function createForceDirectedGraph(data) {
   var buttonsContainer = d3.select("#button-container");
   buttonsContainer.append("button")
     .attr("id", "download-button")
-    .attr("class", "btn btn-primary mx-2")
+    .attr("class", "btn btn-primary m-2")
     .attr("type", "button")
     .text("下載網絡圖")
     .on("click", downloadImage);
@@ -332,6 +332,11 @@ d3.csv("https://raw.githubusercontent.com/sino7622/5075Z/main/csv/Gmerge_2016.cs
     var searchText = d3.select("#search-input").node().value.toLowerCase();
     var selectedGroup = dropdown.node().value;
 
+    // // 過濾資料
+    // var filteredData = data.filter(function (d) {
+    //   return (selectedGroup === "" || d.name === selectedGroup) &&
+    //          (d.name.toLowerCase().includes(searchText)) 
+    // });
     // 過濾資料
     var filteredData = data.filter(function (d) {
       var matchesGroup = selectedGroup === "" || d.name === selectedGroup;
@@ -339,33 +344,10 @@ d3.csv("https://raw.githubusercontent.com/sino7622/5075Z/main/csv/Gmerge_2016.cs
     });
     // 呼叫創建力導向圖的函數
     createForceDirectedGraph(filteredData);
-
-    // 新增下載 CSV 的按鈕
-    var buttonsContainer = d3.select("#button-container");
-    buttonsContainer.selectAll("#download-csv-button").remove(); // 清除舊按鈕
-    buttonsContainer.append("button")
-        .attr("id", "download-csv-button")
-        .attr("class", "btn btn-primary mx-2")
-        .attr("type", "button")
-        .text("下載 CSV")
-        .on("click", function() {
-        downloadCSV(filteredData);
-        });
     
-  }
-  // Create a function to download the CSV data
-    function downloadCSV(data) {
-        var csv = Papa.unparse(data);
-        var blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-        var selectedGroup = dropdown.node().value;
-        var link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = selectedGroup + "_network_data.csv"; // 設置下載文件的名稱
-        document.body.appendChild(link);
-        link.click();
-
-        // 釋放 URL 物件
-        URL.revokeObjectURL(link.href);
   }
    
 });
+
+
+

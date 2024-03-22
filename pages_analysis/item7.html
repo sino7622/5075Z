@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>園路部產業分析平台-土壤肥力分析</title>
+    <title>園路部產業分析平台-土壤保肥力分析</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <div class="bg-white p-3">
+    <div class="bg-white">
         <!-- Spinner Start -->
         <div id="spinner"
             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -58,10 +58,10 @@
         <!-- Spinner End -->
 
         <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
+        <div class=" position-relative p-0">
             <div class="pages_headerpage"></div>
 
-            <div class="container-xxl bg-primary pt-5 pb-0">
+            <div class="bg-primary pt-5 pb-0">
                 <div class="container pt-5 pb-0">
                     <div class="row g-5 pt-5 pb-0">
 
@@ -120,6 +120,7 @@
             height='800' hide-tabs toolbar='bottom'></tableau-viz> -->
 
         <!-- Tableau Public -->
+
         <div class='tableauPlaceholder' id='viz1710321834146' style='position: relative'><noscript><a href='#'><img
                         alt='土壤保肥力分析(陽離子交換率CEC，mol&#47;kg) '
                         src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_17103189772990&#47;CEC&#47;1_rss.png'
@@ -143,10 +144,10 @@
             var vizElement = divElement.getElementsByTagName('object')[0];
             if (divElement.offsetWidth > 800) {
                 vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
+                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
             } else if (divElement.offsetWidth > 500) {
                 vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
+                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
             } else {
                 vizElement.style.width = '100%';
                 vizElement.style.height = '777px';
@@ -155,15 +156,16 @@
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
+
         <!-- Tableau End -->
 
         <!-- Footer Start -->
-        <div class="container-xxl position-relative p-0">
+        <div class="position-relative p-0">
             <div class="pages_footerpage"></div>
         </div>
 
         <!-- Footer End -->
-        
+
 
         <!-- Back to Top -->
         <!-- <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
