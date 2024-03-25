@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>園路部產業分析平台-工商業家數統計</title>
+    <title>園路部產業分析平台-土壤保肥力分析</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -58,7 +58,7 @@
         <!-- Spinner End -->
 
         <!-- Navbar & Hero Start -->
-        <div class="position-relative p-0">
+        <div class=" position-relative p-0">
             <div class="pages_headerpage"></div>
 
             <div class="bg-primary pt-5 pb-0">
@@ -66,7 +66,7 @@
                     <div class="row g-5 pt-5 pb-0">
 
                         <div class="col-12 text-center">
-                            <h1 class="text-white animated slideInDown">全台各行業別工商業家數統計(鄉鎮市區)</h1>
+                            <h1 class="text-white animated slideInDown">土壤分析</h1>
                             <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
@@ -76,7 +76,7 @@
                                             href="../main.html#analysis">產業分析</a></li>
                                     <li class="breadcrumb-item"><a class="text-white" href="../current.html">現況分析</a>
                                     </li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">產業發展現況 / 產業結構分析
+                                    <li class="breadcrumb-item text-white active" aria-current="page">土壤分析
                                     </li>
                                 </ol>
                             </nav>
@@ -85,17 +85,24 @@
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <span class="float-start text-dark">功能說明</span>
-                                    <span class="badge bg-light text-dark float-end">(更新時間：2024/2/29)</span>
+                                    <span class="badge bg-light text-dark float-end">(更新時間：2024/3/25)</span>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        選取欲統計的行業別、年度及縣市別，顯示各鄉鎮市區的工商家數熱區比較及跨行政區排行長條圖。
+                                        輸入基地座標及查詢範圍，。
                                     </h5>
-                                    <p class="card-text">資料項目：「行政區工商家數」<a
-                                            href="https://segis.moi.gov.tw/STAT/Web/Portal/STAT_PortalHome.aspx"
+                                    <p></p>
+                                    <p class="card-text">資料項目：「全台土壤圖」(2019/02/24)<a
+                                            href="https://data.coa.gov.tw/open_detail.aspx?id=159"
                                             class="badge bg-secondary text-dark" target="_blank">來源網址<i
-                                                class=" bi bi-link"></i></a>
-                                        資料來源：內政部統計處，社會經濟資料服務平台</p>
+                                                class=" bi bi-link"></i></a>、說明文件<a
+                                                href="https://drive.google.com/file/d/1lSdSv5WH0hgYD1uywKQhqqHEWT3SqYU_/view?usp=sharing"
+                                                class="badge bg-secondary text-dark" target="_blank">下載 <i
+                                                    class="fa fa-book"></i></a>、土壤調查報告書<a
+                                                    href="https://tssurgo.tari.gov.tw/Tssurgo/Search/Search?Search=&Category=%E5%9C%9F%E8%AA%BF%E5%A0%B1%E5%91%8A"
+                                                    class="badge bg-secondary text-dark" target="_blank">下載 <i
+                                                        class="fa fa-book"></i></a>
+                                        資料來源：農業資料開放平臺，農業部農業試驗所</p>
 
                                 </div>
                             </div>
@@ -107,50 +114,11 @@
         <!-- Navbar & Hero End -->
 
         <!-- Tableau Start -->
-        <!-- <script type='module'
-            src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
-        </script>
-        <tableau-viz id='tableau-viz'
-            src='https://prod-apnortheast-a.online.tableau.com/t/sinotech22/views/-_17084883408130/sheet2' width='1920'
-            height='850' hide-tabs toolbar='bottom'></tableau-viz> -->
 
         <!-- Tableau Public -->
-        <div class='tableauPlaceholder' id='viz1708493568738' style='position: relative'><noscript><a href='#'><img
-                        alt='全台各鄉鎮市區工商業家數統計 '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17084882081110&#47;sheet2&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='-_17084882081110&#47;sheet2' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17084882081110&#47;sheet2&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='zh-TW' />
-                <param name='filter' value='publish=yes' /><param name='showShareOptions' value='false' /></object></div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1708493568738');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
-            } else if (divElement.offsetWidth > 500) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
-            } else {
-                vizElement.style.width = '100%';
-                vizElement.style.height = '877px';
-            }
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
+
+        
+
         <!-- Tableau End -->
 
         <!-- Footer Start -->
@@ -159,6 +127,7 @@
         </div>
 
         <!-- Footer End -->
+
 
         <!-- Back to Top -->
         <!-- <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
