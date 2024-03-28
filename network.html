@@ -43,14 +43,20 @@
 
 <body>
     <div class="container-xxl py-5">
-        <h1>全台集團網絡圖<a class="btn btn-primary mx-2" href="chain.html"><i class="fa fa-book-open"></i> 回索引</a>
-            <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#infoModal"><i
-                    class="fa fa-info"></i>
-                資料來源 </button>
-            <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#csvModal"><i
-                    class="fa fa-file-excel"></i>
-                csv亂碼處理
-            </button></h1>
+        <div class="row g-4 justify-content-center">
+            <div class="col">
+                <h1>全台集團網絡圖<a class="btn btn-light mx-2" href="chain.html"><i class="fa fa-book-open"></i>
+                        回索引</a></h1>
+                <span>請使用下拉選單先選擇集團名稱，顯示網絡圖</span>
+            </div>
+            <div class="col"><button type="button" class="btn btn-info mx-2" data-bs-toggle="modal"
+                    data-bs-target="#infoModal"><i class="fa fa-info"></i>
+                    資料說明 </button><button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal"
+                    data-bs-target="#csvModal"><i class="fa fa-file-excel"></i>
+                    csv亂碼處理
+                </button></div>
+            <div id="button-container" class="col"></div>
+        </div>
         <div class="row g-4">
             <!-- Container for the buttons -->
             <div id="fliter-container">
@@ -62,9 +68,6 @@
                     <input type="text" id="search-input" placeholder="篩選下拉選單集團名稱" aria-describedby="basic-addon3"
                         class="form-control">
                 </div>
-
-                <div id="button-container" class="mb-5 float-end">請使用下拉選單先選擇集團名稱，下方顯示網絡圖</div>
-
             </div>
         </div>
     </div>
@@ -76,19 +79,36 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="infoModalLabel">資料來源</h5>
+                    <h5 class="modal-title" id="infoModalLabel">資料說明</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>由 綠色公民行動聯盟 透明足跡 計畫 <a href="https://thaubing.gcaa.org.tw/group/search"
-                            class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>整理。
-                    </p>
-                    <p>原始來源為 「公開資訊觀測站」2013-2016公司財報<a href="https://mops.twse.com.tw/mops/web/index"
-                            class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>，</p>
-                    <p>經由「2017
-                        g0v公民科技創新獎助金計劃」整理彙整 <a href="https://github.com/starsdog/openGroups"
-                            class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>。</p>
-
+                    <h6>資料來源</h6>
+                    <ul>
+                        <li>綠色公民行動聯盟 透明足跡 計畫 <a href="https://thaubing.gcaa.org.tw/group/search"
+                                class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>
+                        </li>
+                        <li>經由「2017
+                            g0v公民科技創新獎助金計劃」整理彙整 <a href="https://github.com/starsdog/openGroups"
+                                class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>
+                        </li>
+                        <li>原始來源為
+                            「公開資訊觀測站」2013-2016公司財報 <a href="https://mops.twse.com.tw/mops/web/index"
+                                class="badge bg-secondary text-dark" target="_blank"><i class=" bi bi-link"></i></a>
+                        </li>
+                    </ul>
+                    <h6>csv欄位說明</h6>
+                    <ol>
+                        <li>年份(year)</li>
+                        <li>財報公司台灣股票代號(stock)</li>
+                        <li>母公司(source)</li>
+                        <li>子公司(target)</li>
+                        <li>母公司持股比例(holder)</li>
+                        <li>子公司所在國家(location)</li>
+                        <li>集團編號(group)</li>
+                        <li>母公司是否為財報公司(is_coreSource)</li>
+                        <li>集團名稱(name)</li>
+                    </ol>
 
                 </div>
                 <div class="modal-footer">
