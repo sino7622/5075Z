@@ -143,29 +143,41 @@
                     <div class="wow fadeInUp" data-wow-delay="0.1s">
                         <p class="section-title text-secondary justify-content-center"><span></span>群聚熱區地圖<span></span>
                         </p>
-                        <h1 class="text-center">產業群聚查詢圖台(行政區)<br><a class="btn mx-1" href="#index"><i
-                                    class="fab bi bi-book"></i> 回索引</a><a class="btn mx-1" href="#map1"><i
-                                    class="fa fa-map-pin"></i> 行業別大分類-縣市vs全國</a>
-                            <a class="btn mx-1" href="#map2"><i class="fa fa-map-pin"></i> 行業別大分類-鄉鎮市區 vs 縣市</a></h1>
+                        <h1 class="text-center">產業群聚查詢圖台(行政區)<br>
+                            <a class="btn btn-light mx-1" href="#index"><i class="fab bi bi-book"></i> 回索引</a>
+                            <a class="btn btn-light mx-1" href="#map1"><i class="fa fa-map-pin"></i> 行業別大分類-縣市vs全國</a>
+                            <a class="btn btn-light mx-1" href="#map1-2"><i class="fa fa-map-pin"></i> 行業別小分類-縣市vs全國</a>
+                            <a class="btn btn-light mx-1" href="#map2"><i class="fa fa-map-pin"></i> 行業別大分類-鄉鎮市區 vs
+                                縣市</a>
+                            <a class="btn btn-light mx-1" href="#map2-2"><i class="fa fa-map-pin"></i> 行業別細分類-鄉鎮市區 vs
+                                縣市</a></h1>
                         <div class="card mb-0">
                             <div class="card-header">
                                 <span class="float-start text-dark">功能說明</span>
-                                <span class="badge bg-light text-dark float-end">(更新時間：2024/2/29)</span>
+                                <span class="badge bg-light text-dark float-end">(更新時間：2024/4/12)</span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">
                                     計算公式：區位商數法<br>
-                                    LQ > 1：意即某區域某產業的就業人數(或生產總額或銷售額)大於全國(或縣市)平均水準，顯示該產業為該區域的優勢產業。<br>
-                                    LQ < 1：意即某區域某產業的就業人數(或生產總額或銷售額)小於全國(或縣市)平均水準，顯示該產業為該區域的弱勢產業。 </h5> <p
-                                        class="card-text">
-                                        資料項目：「105年工業及服務業普查從業員工年底人數」<a
-                                            href="https://dtable.dgbas.gov.tw/censuall/webmain.aspx?sys=210&funid=advqry&clear=1"
-                                            class="badge bg-secondary text-dark" target="_blank">來源網址<i
-                                                class=" bi bi-link"></i></a>、「營利事業家數及銷售額」<a
-                                            href="https://web02.mof.gov.tw/njswww/WebMain.aspx?sys=100&funid=defjspf2"
-                                            class="badge bg-secondary text-dark" target="_blank">來源網址<i
-                                                class=" bi bi-link"></i></a>
-                                        資料來源：三大普查動態查詢系統，行政院主計總處；財政部統計資料庫，財政部</p>
+                                    <span class="text-danger">LQ >
+                                        1</span>：<br>意即某區域某產業的就業人數(或生產總額或銷售額或場所單位數)大於全國(或縣市)平均水準，顯示該產業為該區域的優勢產業。<br>
+                                    <span class="text-danger">LQ < 1</span>： <br>
+                                            意即某區域某產業的就業人數(或生產總額或銷售額或場所單位數)小於全國(或縣市)平均水準，顯示該產業為該區域的劣勢產業。 </h5>
+                                <p class="card-text">
+                                    資料項目：「105年工業及服務業普查-工業及服務業場所單位數－按縣市別及小行業別分」<a
+                                        href="https://www.stat.gov.tw/News_Content.aspx?n=2740&s=105298&Create=1&ccms_cs=1&state=1327FD6AD8DCDA52"
+                                        class="badge bg-secondary text-dark" target="_blank">來源網址<i
+                                            class=" bi bi-link"></i></a>、「105年工業及服務業普查-各縣市-工業及服務業場所單位數－按行政區別及細行業別分」<a
+                                        href="https://www.stat.gov.tw/News_Content.aspx?n=2740&s=87956&Create=1&ccms_cs=1&state=1327FD6AD8DCDA52"
+                                        class="badge bg-secondary text-dark" target="_blank">來源網址<i
+                                            class=" bi bi-link"></i></a>、「105年工業及服務業普查從業員工年底人數」<a
+                                        href="https://dtable.dgbas.gov.tw/censuall/webmain.aspx?sys=210&funid=advqry&clear=1"
+                                        class="badge bg-secondary text-dark" target="_blank">來源網址<i
+                                            class=" bi bi-link"></i></a>、「營利事業家數及銷售額」<a
+                                        href="https://web02.mof.gov.tw/njswww/WebMain.aspx?sys=100&funid=defjspf2"
+                                        class="badge bg-secondary text-dark" target="_blank">來源網址<i
+                                            class=" bi bi-link"></i></a>
+                                    資料來源：三大普查動態查詢系統，行政院主計總處；財政部統計資料庫，財政部</p>
 
                             </div>
                         </div>
@@ -174,7 +186,7 @@
             </div>
         </div>
         <h2 class="text-center my-3" id="map1">行業別大分類-縣市vs全國</h2>
-        <!-- Tableau Start -縣市vs全國-->
+        <!-- Tableau Start -大分類 縣市vs全國-->
         <!-- <script type='module'
             src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
         </script>
@@ -212,8 +224,21 @@
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
+        <!-- Tableau Public -->
+
+        <h2 class="text-center my-3" id="map2">行業別小分類-縣市vs全國</h2>
+        <!-- Tableau Start -小分類 鄉鎮市區 vs 縣市-->
+        <!-- Tableau Public -->
+
+
+
+        <!-- Tableau Public -->
+
+
+
+
         <h2 class="text-center my-3" id="map2">行業別大分類-鄉鎮市區 vs 縣市</h2>
-        <!-- Tableau Start - 鄉鎮市區 vs 縣市-->
+        <!-- Tableau Start -大分類 鄉鎮市區 vs 縣市-->
         <!-- <script type='module'
             src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
         </script>
@@ -240,7 +265,8 @@
                 <param name='display_overlay' value='yes' />
                 <param name='display_count' value='yes' />
                 <param name='language' value='zh-TW' />
-                <param name='filter' value='publish=yes' /><param name='showShareOptions' value='false' /></object></div>
+                <param name='filter' value='publish=yes' />
+                <param name='showShareOptions' value='false' /></object></div>
         <script type='text/javascript'>
             var divElement = document.getElementById('viz1711337064442');
             var vizElement = divElement.getElementsByTagName('object')[0];
@@ -251,7 +277,13 @@
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
 
-        <!-- Tableau End -->
+        <!-- Tableau Public -->
+
+        <h2 class="text-center my-3" id="map2">行業別細分類-鄉鎮市區 vs 縣市</h2>
+        <!-- Tableau Start -細分類 鄉鎮市區 vs 縣市-->
+
+        <!-- Tableau Public -->
+
         <!-- Projects End -->
 
         <!-- footer start -->
