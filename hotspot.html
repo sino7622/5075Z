@@ -43,6 +43,90 @@
 
         gtag('config', 'G-VQJ02VGSCM');
     </script>
+    <style>
+        #tab {
+            width: 95%;
+            background: #a0c3f8;
+            border: solid 1px #b1e5f5;
+            margin: 10px auto;
+
+        }
+
+        /* 頁籤ul */
+        #tab>ul {
+            /* overflow: hidden; */
+            margin: 0;
+            padding: 10px 20px 0 20px;
+        }
+
+        #tab>ul>li {
+            list-style-type: none;
+        }
+
+        /* 頁籤上的文字 */
+        #tab>ul>li>a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #333;
+            float: left;
+            padding: 10px;
+            margin-left: 5px;
+        }
+
+        /*頁籤div內容*/
+        #tab>div {
+            clear: both;
+            padding: 0 15px;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        /*第一筆的底色*/
+        span:target~#tab>ul li:first-child a {
+            background: #a0c3f8;
+        }
+
+        span:target~#tab>div:first-of-type {
+            visibility: hidden;
+            height: 0;
+            padding: 0 15px;
+        }
+
+        /*頁籤變換&第一筆*/
+        span~#tab>ul li:first-child a,
+        #tab-1:target~#tab>ul li a[href$="#tab-1"],
+        #tab-2:target~#tab>ul li a[href$="#tab-2"],
+        #tab-3:target~#tab>ul li a[href$="#tab-3"],
+        #tab-4:target~#tab>ul li a[href$="#tab-4"] {
+            background: #fff;
+            border-radius: 5px 5px 0 0;
+        }
+
+        span~#tab>ul li:first-child a::before,
+        #tab-1:target~#tab>ul li a[href$="#tab-1"]::before,
+        #tab-2:target~#tab>ul li a[href$="#tab-2"]::before,
+        #tab-3:target~#tab>ul li a[href$="#tab-3"]::before,
+        #tab-4:target~#tab>ul li a[href$="#tab-4"]::before {
+            background-color: white;
+            height: 100%;
+        }
+
+        /*頁籤內容顯示&第一筆*/
+        span~#tab>div:first-of-type,
+        #tab-1:target~#tab>div.tab-content-1,
+        #tab-2:target~#tab>div.tab-content-2,
+        #tab-3:target~#tab>div.tab-content-3,
+        #tab-4:target~#tab>div.tab-content-4 {
+            visibility: visible;
+            height: 900px;
+            background: #fff;
+        }
+
+        span {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -143,14 +227,7 @@
                     <div class="wow fadeInUp" data-wow-delay="0.1s">
                         <p class="section-title text-secondary justify-content-center"><span></span>群聚熱區地圖<span></span>
                         </p>
-                        <h1 class="text-center">產業群聚查詢圖台(行政區)<br>
-                            <a class="btn btn-light mx-1" href="#index"><i class="fab bi bi-book"></i> 回索引</a>
-                            <a class="btn btn-light mx-1" href="#map1"><i class="fa fa-map-pin"></i> 行業別大分類-縣市vs全國</a>
-                            <!-- <a class="btn btn-light mx-1" href="#map1-2"><i class="fa fa-map-pin"></i> 行業別小分類-縣市vs全國</a> -->
-                            <a class="btn btn-light mx-1" href="#map2"><i class="fa fa-map-pin"></i> 行業別大分類-鄉鎮市區 vs
-                                縣市</a>
-                            <!-- <a class="btn btn-light mx-1" href="#map2-2"><i class="fa fa-map-pin"></i> 行業別細分類-鄉鎮市區 vs
-                                縣市</a> --></h1>
+                        <h1 class="text-center">產業群聚查詢圖台(行政區)</h1>
                         <div class="card mb-0">
                             <div class="card-header">
                                 <span class="float-start text-dark">功能說明</span>
@@ -185,104 +262,159 @@
                 </div>
             </div>
         </div>
-        <h2 class="text-center my-3" id="map1">行業別大分類-縣市vs全國</h2>
-        <!-- Tableau Start -大分類 縣市vs全國-->
-        <!-- <script type='module'
-            src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
-        </script>
-        <tableau-viz id='tableau-viz'
-            src='https://prod-apnortheast-a.online.tableau.com/t/sinotech22/views/-_17092762045850/Main' width='1920'
-            height='950' hide-tabs toolbar='bottom'></tableau-viz> -->
 
-        <!-- Tableau Public -->
-        <div class='tableauPlaceholder' id='viz1711336733915' style='position: relative'><noscript><a href='#'><img
-                        alt='優勢產業分析-縣市對比全國 '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092768793230&#47;-&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='-_17092768793230&#47;-' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092768793230&#47;-&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='zh-TW' />
-                <param name='filter' value='publish=yes' />
-                <param name='showShareOptions' value='false' /></object></div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1711336733915');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '100%';
-            vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
-        <!-- Tableau Public -->
+        <span id="tab-1">行業別大分類-縣市vs全國</span>
+        <span id="tab-2">行業別中分類-縣市vs全國</span>
+        <span id="tab-3">行業別大分類-鄉鎮市區 vs 縣市</span>
+        <span id="tab-4">行業別中分類-鄉鎮市區 vs 縣市</span>
 
-        <!-- <h2 class="text-center my-3" id="map1-2">行業別小分類-縣市vs全國</h2> -->
-        <!-- Tableau Start -小分類 鄉鎮市區 vs 縣市-->
-        <!-- Tableau Public -->
+        <!-- 頁籤按鈕 -->
+        <div id="tab">
+            <ul>
+                <li><a href="#tab-1">行業別大分類-縣市vs全國</a></li>
+                <li><a href="#tab-2">行業別中分類-縣市vs全國</a></li>
+                <li><a href="#tab-3">行業別大分類-鄉鎮市區 vs 縣市</a></li>
+                <li><a href="#tab-4">行業別中分類-鄉鎮市區 vs 縣市</a></li>
+            </ul>
 
-
-
-        <!-- Tableau Public -->
-
-
-
-
-        <h2 class="text-center my-3" id="map2">行業別大分類-鄉鎮市區 vs 縣市</h2>
-        <!-- Tableau Start -大分類 鄉鎮市區 vs 縣市-->
-        <!-- <script type='module'
-            src='https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'>
-        </script>
-        <tableau-viz id='tableau-viz'
-            src='https://prod-apnortheast-a.online.tableau.com/t/sinotech22/views/_17086800642510/Main' width='1920'
-            height='950' hide-tabs toolbar='bottom'></tableau-viz> -->
-
-        <!-- Tableau Public -->
-        <div class='tableauPlaceholder' id='viz1711337064442' style='position: relative'><noscript><a href='#'><img
-                        alt='優勢產業分析-鄉鎮市區對比縣市 '
-                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092696855420&#47;-&#47;1_rss.png'
-                        style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='-_17092696855420&#47;-' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image'
-                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092696855420&#47;-&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='zh-TW' />
-                <param name='filter' value='publish=yes' />
-                <param name='showShareOptions' value='false' /></object></div>
-        <script type='text/javascript'>
-            var divElement = document.getElementById('viz1711337064442');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '100%';
-            vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
-
-        <!-- Tableau Public -->
-
-        <!-- <h2 class="text-center my-3" id="map2-2">行業別細分類-鄉鎮市區 vs 縣市</h2> -->
-        <!-- Tableau Start -細分類 鄉鎮市區 vs 縣市-->
-
-        <!-- Tableau Public -->
+            <!-- 頁籤的內容區塊 -->
+            <div class="tab-content-1">
+                <!-- Tableau Public -->
+                <div class='tableauPlaceholder' id='viz1714636616031' style='position: relative'><noscript><a
+                            href='#'><img alt='優勢產業分析-縣市對比全國 '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092768793230&#47;Main&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='-_17092768793230&#47;Main' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image'
+                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092768793230&#47;Main&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='zh-TW' />
+                        <param name='showShareOptions' value='false' /></object></div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1714636616031');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <!-- Tableau Public -->
+            </div>
+            <div class="tab-content-2">
+                <!-- Tableau Public -->
+                <div class='tableauPlaceholder' id='viz1714636883015' style='position: relative'><noscript><a
+                            href='#'><img alt='各縣市場所單位數區位商數表(LQ)-製造業中行業別 '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;--&#47;--_17146261842420&#47;sheet5&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='--_17146261842420&#47;sheet5' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image'
+                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;--&#47;--_17146261842420&#47;sheet5&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='zh-TW' />
+                        <param name='showShareOptions' value='false' /></object></div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1714636883015');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <!-- Tableau Public -->
+            </div>
+            <div class="tab-content-3">
+                <!-- Tableau Public -->
+                <div class='tableauPlaceholder' id='viz1714636912649' style='position: relative'><noscript><a
+                            href='#'><img alt='優勢產業分析-鄉鎮市區對比縣市 '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092696855420&#47;-&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='-_17092696855420&#47;-' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image'
+                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;-_&#47;-_17092696855420&#47;-&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='zh-TW' />
+                        <param name='showShareOptions' value='false' /></object></div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1714636912649');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <!-- Tableau Public -->
+            </div>
+            <div class="tab-content-4">
+                <!-- Tableau Public -->
+                <div class='tableauPlaceholder' id='viz1714636964642' style='position: relative'><noscript><a
+                            href='#'><img alt='各行政區場所單位數區位商數表(LQ)-中行業別 '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;--&#47;--_17144684917000&#47;LQ_&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='--_17144684917000&#47;LQ_' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image'
+                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;--&#47;--_17144684917000&#47;LQ_&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='zh-TW' />
+                        <param name='showShareOptions' value='false' /></object></div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1714636964642');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if (divElement.offsetWidth > 800) {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+                    } else if (divElement.offsetWidth > 500) {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+                    } else {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = '1027px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <!-- Tableau Public -->
+            </div>
+        </div>
 
         <!-- Projects End -->
 
