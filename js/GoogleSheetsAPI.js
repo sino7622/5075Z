@@ -258,7 +258,7 @@ $(document).ready(function () {
     const apiKey = 'AIzaSyA7xlnHb3I7Ojo4AtIIdcrPdnZ_Ael1o3Y';
     const sheetId = '1fOub1yuYBMmABDRcWJm4PnRiYjXyw2-fxGt7sqilvQ4';
     // Fetch data for chain items
-    const chainRange = 'chain!A2:J86';
+    const chainRange = 'chain!A2:J89';
     const chainApiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${chainRange}?key=${apiKey}`;
 
     // Fetch data for filter items
